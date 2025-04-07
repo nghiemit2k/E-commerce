@@ -1,7 +1,7 @@
 import { UserStatus } from '@prisma/client'
 import { createZodDto } from 'nestjs-zod'
 import { z } from 'zod'
-import { RegisterBodySchema, RegisterResShema, SendOTPBodySchema } from './auth.model'
+import { LoginBodySchema, LoginResSchema, RegisterBodySchema, RegisterResShema, SendOTPBodySchema } from './auth.model'
 
 // const userSchema = z.object({
 //     id: z.number(),
@@ -36,4 +36,6 @@ import { RegisterBodySchema, RegisterResShema, SendOTPBodySchema } from './auth.
 
 export class RegisterBodyDTO extends createZodDto(RegisterBodySchema) { }
 export class RegisterResponseDTO extends createZodDto(RegisterResShema) { }
-export class SendOTPBodyDTO extends createZodDto(SendOTPBodySchema) {}
+export class SendOTPBodyDTO extends createZodDto(SendOTPBodySchema) { }
+export class LoginBodyDTO extends createZodDto(LoginBodySchema) { }
+export class LoginResDTO extends  createZodDto(LoginResSchema) {}
